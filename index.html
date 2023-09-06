@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="es">
+    <head>
+        <title>Plantillas para Menu Semanal</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Juan Jose">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="date" content="2021-01-01" scheme="YYYY-MM-DD">
+        <meta name="identifier" content="" scheme="ISBN">
+        <!--<meta http-equiv="refresh" content="30">-->
+        <link rel="shortcut icon" href="" />
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript">
+            String.prototype.replaceAt = function(index, replacement) {
+                return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+            }
+
+            function rgb2hex(rgb) {
+                rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+                function hex(x) {
+                    return ("0" + parseInt(x).toString(16)).slice(-2);
+                }
+                return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+            }
+
+            $(document).ready(function(e) {
+                main();
+            });
+
+            var now = new Date().toISOString();
+            var [y, M, d, h, m, s, nm] = now.match(/\d+/g);
+            nm = nm + "000";
+            h  = parseInt(h) + 2;
+
+            var url = window.location.pathname;
+            var url = url.substr(1, url.indexOf('/index.html'));
+
+            var height = $(window).height();
+            var width  = $(window).width();
+        </script>
+        <script src="menu.txt"></script>
+        <script src="class.js"></script>
+        <script src="functions.js"></script>
+
+    </head>
+    <body>
+        <!-- -->
+        <div class="table">
+            <div class="body">
+                <div>
+                    <dl>
+                        <dt><b>Lunes</b></dt>
+                        <dd>Comer<select name="mon_l" ></option></select></dd>
+                        <dd>Cenar<select name="mon_d" ></option></select></dd>
+                        <dt><b>Martes</b></dt>
+                        <dd>Comer<select name="tue_l" ></option></select></dd>
+                        <dd>Cenar<select name="tue_d" ></option></select></dd>
+                        <dt><b>Miércoles</b></dt>
+                        <dd>Comer<select name="wed_l" ></option></select></dd>
+                        <dd>Cenar<select name="wed_d" ></option></select></dd>
+                        <dt><b>Jueves</b></dt>
+                        <dd>Comer<select name="thu_l" ></option></select></dd>
+                        <dd>Cenar<select name="thu_d" ></option></select></dd>
+                        <dt><b>Viernes</b></dt>
+                        <dd>Comer<select name="fri_l" ></option></select></dd>
+                        <dd>Cenar<select name="fri_d" ></option></select></dd>
+                        <dt><b>Sábado</b></dt>
+                        <dd>Comer<select name="sat_l" ></option></select></dd>
+                        <dd>Cenar<select name="sat_d" ></option></select></dd>
+                        <dt><b>Domingo</b></dt>
+                        <dd>Comer<select name="sun_l" ></option></select></dd>
+                        <dd>Cenar<select name="sun_d" ></option></select></dd>
+                    </dl>
+                </div>
+
+                <div><textarea name="str" disabled></textarea></div>
+            </div>
+        </div>
+        <!-- -->
+    </body>
+</html>
+
+
+
+
+
+
+
+
