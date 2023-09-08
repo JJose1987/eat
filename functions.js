@@ -21,6 +21,7 @@ function main() {
     update();
     
     $('select').change(function() {set(this);});
+    $('svg').click(function() {send();});
 }
 // Asignar valor del campo
 function set(object) {
@@ -30,7 +31,13 @@ function set(object) {
 
     update();
 }
+//
+function send() {
+    location.href = 'http://wa.me/?text=' + this.__eat.str;
+}
 // Actualizar valores de la clase
 function update() {
-    $('textarea[name=str]').val(this.__eat.str);
+    $('div[id=lack]').html(this.__eat.lack);
 }
+
+

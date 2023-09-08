@@ -43,18 +43,18 @@ class EAT {
             , 'pimiento verde': 0.500
             , 'tomates'       : 0.200
             , 'zanaharina'    : 3
-            , 'torta de maíz' : 2
+            , 'tortas de maíz': 2
         };
 
         this.CheckLack = {
-              'Pasta         ' : [0, 2, ['arroz', 'macarrones', 'espaguettis', 'fideos']]
-            , 'Legumbres     ' : [0, 3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
-            , 'Patata        ' : [0, 2, ['patata', 'batata']]
-            , 'Carne blanca  ' : [0, 3, ['pollo', 'pavo', 'gallina']]
-            , 'Carne roja    ' : [0, 1, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
-            , 'Pescado blanco' : [0, 4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
-            , 'Pescado azules' : [0, 2, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
-            , 'Huevo         ' : [0, 7, ['huevo']]
+              'pastas'          : [0, 2, ['arroz', 'macarrones', 'espaguettis', 'fideos']]
+            , 'legumbres'       : [0, 3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
+            , 'tubérculos'      : [0, 2, ['patata', 'batata']]
+            , 'carnes blancas'  : [0, 3, ['pollo', 'pavo', 'gallina']]
+            , 'carnes rojas'    : [0, 1, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
+            , 'pescados blancos': [0, 4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
+            , 'pescados azules' : [0, 4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
+            , 'huevos'          : [0, 7, ['huevo']]
         };
 
         this.days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
@@ -124,6 +124,11 @@ class EAT {
                         }
                     }
                 }
+            } else {
+                // Revisar de que hay poco y dejar el menu con lo que hay poco y volver a gener las opciones para elegir
+                var auxKeys = Object.keys(this.kwargs['GlobalMenu']);
+
+                this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * auxKeys.length)];
             }
         } while (++i1 < this.days.length);
     }
@@ -201,16 +206,43 @@ class EAT {
 
         return out;
     }
+    
+    /* Metodo para devolver los excesos  o carencias */
+    get lack() {
+        var out = '*********************************************************';
+        
+        var little = '';
+        var lotof  = '';
+        
+        var aux0 = this.list();        
+        var auxKeys = Object.keys(this.CheckLack);
+
+        for (var i0 = 0; i0 < auxKeys.length; i0++) {
+            var aux1 = this.CheckLack[auxKeys[i0]][2];
+            
+            if (this.CheckLack[auxKeys[i0]][0] > this.CheckLack[auxKeys[i0]][1]) {
+                lotof  += auxKeys[i0] + ', ';
+            } else if (this.CheckLack[auxKeys[i0]][0] < this.CheckLack[auxKeys[i0]][1]) {
+                little += auxKeys[i0] + ', ';
+            }
+        }
+
+        out += '<br />* -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.'
+            +  '<br />* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
+            +  '<br />*********************************************************';
+
+        return out;
+    }
 
     /* Metodo para retornar la clase en cadena de caracteres */
     get str() {
-        var out = '******************************';
+        var out = '*********************************************************';
 
         for (var i0 = 0; i0 < this.days.length; i0++) {
             out += '\n' + this.ddays[i0] + this.kwargs[days[i0]];
         }
 
-        out += '\n******************************';
+        out += '\n*********************************************************';
         var aux0 = this.list();
         var auxKeys = Object.keys(aux0);
 
@@ -223,20 +255,25 @@ class EAT {
             out += '\n *-> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
         }
 
-        out += '\n******************************';
+        out += '\n*********************************************************';
         var auxKeys = Object.keys(this.CheckLack);
+        
+        var little = '';
+        var lotof  = '';
 
         for (var i0 = 0; i0 < auxKeys.length; i0++) {
             var aux1 = this.CheckLack[auxKeys[i0]][2];
             
             if (this.CheckLack[auxKeys[i0]][0] > this.CheckLack[auxKeys[i0]][1]) {
-                out += '\n *-> Mucha ' + auxKeys[i0];
+                lotof  += auxKeys[i0] + ', ';
             } else if (this.CheckLack[auxKeys[i0]][0] < this.CheckLack[auxKeys[i0]][1]) {
-                out += '\n *-> Poca  ' + auxKeys[i0];
+                little += auxKeys[i0] + ', ';
             }
         }
-        
-        out += '\n******************************';
+
+        out += '\n* -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
+            +  '\n* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
+            +  '\n*********************************************************';
 
 
         return out;

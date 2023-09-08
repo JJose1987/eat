@@ -1,9 +1,4 @@
 /* Styles */
-iframe div {
-   font-family: monospace;
-   font-size: 1vmax;
-   margin: 0.1%;
-}    
 body {
    font-family: monospace;
    font-size: 1vmax;
@@ -34,16 +29,27 @@ body {
     vertical-align: top !important;
     text-align: left !important;
 }
-.body div textarea {
-    width: 99%;
-    height: 99%;
-    resize: none;
-    background: #FFFFFF !important;
-    font-weight: 900;
-    font-size: 1.1vmax;
+/* */
+div {
+    margin: 1%;
+}
+/* */
+div[id=lack] {
+    margin: 1%;
+    color: #FF0000;
 }
 /* Formulario */
 select {
     margin-left: 5%;
     margin-bottom: 0.5vmax;
+}
+/* Boton de compartir */
+svg {
+    cursor: pointer;
+    position: fixed;
+    bottom: 3vmax;
+    right:  3vmax;
+    width:  10vmax;
+    height: 6vmax;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,.4));
 }
