@@ -227,9 +227,9 @@ class EAT {
             }
         }
 
-        out += '<br />* -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.'
-            +  '<br />* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '<br />::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
+        out += '\n* -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.'
+            +  '\n* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
+            +  '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         return out;
     }
@@ -239,10 +239,10 @@ class EAT {
         var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         for (var i0 = 0; i0 < this.days.length; i0++) {
-            out += '%0' + this.ddays[i0] + this.kwargs[days[i0]];
+            out += '\n' + this.ddays[i0] + this.kwargs[days[i0]];
         }
 
-        out += '%0::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
+        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
         var aux0 = this.list();
         var auxKeys = Object.keys(aux0);
 
@@ -252,10 +252,10 @@ class EAT {
                 aux1 *= this.ration[auxKeys[i0]];
             } 
 
-            out += '%0 - ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
+            out += '\n: -> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
         }
 
-        out += '%0::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
+        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
         var auxKeys = Object.keys(this.CheckLack);
         
         var little = '';
@@ -271,9 +271,9 @@ class EAT {
             }
         }
 
-        out += '%0: -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
-            +  '%0: -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '%0::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
+        out += '\n: -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
+            +  '\n: -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
+            +  '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
 
         return out;
