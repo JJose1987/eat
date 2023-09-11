@@ -3,7 +3,7 @@
 class EAT {
     /* Constructor donde le pasamos los datos de entrada, para ello le pasamos el nombreparametro = VALUE */
     constructor(kwargs) {
-        //********************************************************************************
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::***********************
         // Variables por defecto
         this.person = 3;
 
@@ -79,7 +79,7 @@ class EAT {
                 }
             }
         }
-        //********************************************************************************
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::***********************
     }
 
     /* Metodo para cargar los primeros días */
@@ -209,7 +209,7 @@ class EAT {
     
     /* Metodo para devolver los excesos  o carencias */
     get lack() {
-        var out = '*********************************************************';
+        var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
         
         var little = '';
         var lotof  = '';
@@ -229,20 +229,20 @@ class EAT {
 
         out += '<br />* -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.'
             +  '<br />* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '<br />*********************************************************';
+            +  '<br />::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         return out;
     }
 
     /* Metodo para retornar la clase en cadena de caracteres */
     get str() {
-        var out = '*********************************************************';
+        var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         for (var i0 = 0; i0 < this.days.length; i0++) {
             out += '\n' + this.ddays[i0] + this.kwargs[days[i0]];
         }
 
-        out += '\n*********************************************************';
+        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
         var aux0 = this.list();
         var auxKeys = Object.keys(aux0);
 
@@ -255,7 +255,7 @@ class EAT {
             out += '\n *-> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
         }
 
-        out += '\n*********************************************************';
+        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
         var auxKeys = Object.keys(this.CheckLack);
         
         var little = '';
@@ -271,9 +271,9 @@ class EAT {
             }
         }
 
-        out += '\n* -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
-            +  '\n* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '\n*********************************************************';
+        out += '\n: -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
+            +  '\n: -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
+            +  '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
 
         return out;
