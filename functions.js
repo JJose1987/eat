@@ -1,4 +1,5 @@
 /* JavaScript */
+/* https://www.degraeve.com/reference/urlencoding.php */
 // Variables
 var days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
 
@@ -26,14 +27,14 @@ function main() {
 // Asignar valor del campo
 function set(object) {
     var index = $(object).attr('name');
-    
+
     this.__eat.set(index, ($(object).val()).replaceAll('_', ' '));
 
     update();
 }
 //
 function send() {
-    location.href = 'whatsapp://send?text=' + ((this.__eat.str).replaceAll(' ', '%20')).replaceAll('\n', '%0A');
+    location.href = 'whatsapp://send?text=' + ((this.__eat.str).replaceAll(' ', '%20')).replaceAll('\n', '%0A');    
 }
 // Actualizar valores de la clase
 function update() {

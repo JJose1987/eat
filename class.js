@@ -3,7 +3,7 @@
 class EAT {
     /* Constructor donde le pasamos los datos de entrada, para ello le pasamos el nombreparametro = VALUE */
     constructor(kwargs) {
-        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::***********************
+        //*********************************************************************************
         // Variables por defecto
         this.person = 3;
 
@@ -47,11 +47,12 @@ class EAT {
         };
 
         this.CheckLack = {
-              'pastas'          : [0, 2, ['arroz', 'macarrones', 'espaguettis', 'fideos']]
+              'arroces'         : [0, 5, ['arroz']]
+            , 'pastas'          : [0, 3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
             , 'legumbres'       : [0, 3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
-            , 'tubérculos'      : [0, 2, ['patata', 'batata']]
+            , 'tubérculos'      : [0, 7, ['patata', 'batata']]
             , 'carnes blancas'  : [0, 3, ['pollo', 'pavo', 'gallina']]
-            , 'carnes rojas'    : [0, 1, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
+            , 'carnes rojas'    : [0, 2, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
             , 'pescados blancos': [0, 4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
             , 'pescados azules' : [0, 4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
             , 'huevos'          : [0, 7, ['huevo']]
@@ -79,7 +80,7 @@ class EAT {
                 }
             }
         }
-        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::***********************
+        //*********************************************************************************
     }
 
     /* Metodo para cargar los primeros días */
@@ -87,8 +88,9 @@ class EAT {
         var i1      = 0;
         var i4      = 0;
         var newKeys = [];
-        var insert  = true;
         var auxKeys = Object.keys(this.kwargs['GlobalMenu']);
+        var insert  = true;
+        var err     = false;
 
         do {
             if (i1 > 0) {
@@ -98,7 +100,7 @@ class EAT {
             var i0   = auxKeys.length;
             this.kwargs[this.days[i1]] = '';
 
-            if (i0 > 0) {
+            if ((i0 > 0) && !err) {
                 this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * i0)];
 
                 var aux0 = this.list();
@@ -124,11 +126,37 @@ class EAT {
                         }
                     }
                 }
-            } else {
-                // Revisar de que hay poco y dejar el menu con lo que hay poco y volver a gener las opciones para elegir
-                var auxKeys = Object.keys(this.kwargs['GlobalMenu']);
+            }
 
-                this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * auxKeys.length)];
+            if (i0 <= 0) {
+                err = true;
+            }
+
+            if (err) {
+                // Obtenemos aquellos que tenemos alguna carencia
+                var aux0 = this.list();
+                
+                auxKeys = Object.keys(this.kwargs['GlobalMenu']);
+
+                newKeys = [];
+                i4      = 0;
+                
+                for (var i2 = 0; i2 < auxKeys.length; i2++) {
+                    var aux1 = (this.kwargs['GlobalMenu'][auxKeys[i2]]).split(', ');
+                    insert   = true;
+                    
+                    for (var i3 = 0; i3 < aux1.length; i3++) {
+                        if (insert) {
+                            insert = this.insert(aux1[i3]);
+                        }
+                    }
+
+                    if (insert) {
+                        newKeys[i4++] = auxKeys[i2];
+                    }
+                }
+
+                this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * newKeys.length)];
             }
         } while (++i1 < this.days.length);
     }
@@ -206,20 +234,20 @@ class EAT {
 
         return out;
     }
-    
+
     /* Metodo para devolver los excesos  o carencias */
     get lack() {
         var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
-        
+
         var little = '';
         var lotof  = '';
-        
-        var aux0 = this.list();        
+
+        var aux0 = this.list();
         var auxKeys = Object.keys(this.CheckLack);
 
         for (var i0 = 0; i0 < auxKeys.length; i0++) {
             var aux1 = this.CheckLack[auxKeys[i0]][2];
-            
+
             if (this.CheckLack[auxKeys[i0]][0] > this.CheckLack[auxKeys[i0]][1]) {
                 lotof  += auxKeys[i0] + ', ';
             } else if (this.CheckLack[auxKeys[i0]][0] < this.CheckLack[auxKeys[i0]][1]) {
@@ -227,9 +255,15 @@ class EAT {
             }
         }
 
-        out += '\n* -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.'
-            +  '\n* -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
+        if (lotof != '') {
+            out += '\n: -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.';
+        }
+
+        if (little != '') {
+            out += '\n: -> Poc@s  ' + little.substr(0, little.length - 2) + '.';
+        }
+
+        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         return out;
     }
@@ -239,7 +273,7 @@ class EAT {
         var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         for (var i0 = 0; i0 < this.days.length; i0++) {
-            out += '\n' + this.ddays[i0] + this.kwargs[days[i0]];
+            out += '\n' + this.ddays[i0] + this.kwargs[days[i0]] + '(' + this.kwargs['GlobalMenu'][this.kwargs[days[i0]]] + ')';
         }
 
         out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
@@ -250,31 +284,12 @@ class EAT {
             var aux1 = aux0[auxKeys[i0]] * this.person
             if (typeof this.ration[auxKeys[i0]] != 'undefined') {
                 aux1 *= this.ration[auxKeys[i0]];
-            } 
+            }
 
             out += '\n: -> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
         }
 
-        out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
-        var auxKeys = Object.keys(this.CheckLack);
-        
-        var little = '';
-        var lotof  = '';
-
-        for (var i0 = 0; i0 < auxKeys.length; i0++) {
-            var aux1 = this.CheckLack[auxKeys[i0]][2];
-            
-            if (this.CheckLack[auxKeys[i0]][0] > this.CheckLack[auxKeys[i0]][1]) {
-                lotof  += auxKeys[i0] + ', ';
-            } else if (this.CheckLack[auxKeys[i0]][0] < this.CheckLack[auxKeys[i0]][1]) {
-                little += auxKeys[i0] + ', ';
-            }
-        }
-
-        out += '\n: -> Much@s ' + lotof.substr(0, lotof.length - 2)   + '.'
-            +  '\n: -> Poc@s  ' + little.substr(0, little.length - 2) + '.'
-            +  '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
-
+        out += '\n' + this.lack;
 
         return out;
     }
