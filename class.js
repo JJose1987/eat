@@ -42,20 +42,21 @@ class EAT {
             , 'pimiento rojo' : 0.500
             , 'pimiento verde': 0.500
             , 'tomates'       : 0.200
-            , 'zanaharina'    : 3
+            , 'zanahoria'     : 3
             , 'tortas de maíz': 2
         };
 
         this.CheckLack = {
-              'arroces'         : [0, 5, ['arroz']]
-            , 'pastas'          : [0, 3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
-            , 'legumbres'       : [0, 3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
-            , 'tubérculos'      : [0, 7, ['patata', 'batata']]
-            , 'carnes blancas'  : [0, 3, ['pollo', 'pavo', 'gallina']]
-            , 'carnes rojas'    : [0, 2, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
-            , 'pescados blancos': [0, 4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
-            , 'pescados azules' : [0, 4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
-            , 'huevos'          : [0, 7, ['huevo']]
+              'arroces'         : [0,  5, ['arroz']]
+            , 'pastas'          : [0,  3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
+            , 'legumbres'       : [0,  3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
+            , 'tubérculos'      : [0,  7, ['patata', 'batata']]
+            , 'carnes blancas'  : [0,  3, ['pollo', 'pavo', 'gallina']]
+            , 'carnes rojas'    : [0,  2, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
+            , 'pescados blancos': [0,  4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
+            , 'pescados azules' : [0,  4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
+            , 'huevos'          : [0,  7, ['huevo']]
+            , 'verduras'        : [0, 99, ['aguacate', 'ajo', 'alcachofa', 'berenjena', 'brócoli', 'calabaza', 'calabacín', 'cebolla', 'coliflor', 'espinaca', 'pimiento', 'tomate', 'zanahoria', 'champiñon']]
         };
 
         this.days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
@@ -133,30 +134,7 @@ class EAT {
             }
 
             if (err) {
-                // Obtenemos aquellos que tenemos alguna carencia
-                var aux0 = this.list();
-                
-                auxKeys = Object.keys(this.kwargs['GlobalMenu']);
-
-                newKeys = [];
-                i4      = 0;
-                
-                for (var i2 = 0; i2 < auxKeys.length; i2++) {
-                    var aux1 = (this.kwargs['GlobalMenu'][auxKeys[i2]]).split(', ');
-                    insert   = true;
-                    
-                    for (var i3 = 0; i3 < aux1.length; i3++) {
-                        if (insert) {
-                            insert = this.insert(aux1[i3]);
-                        }
-                    }
-
-                    if (insert) {
-                        newKeys[i4++] = auxKeys[i2];
-                    }
-                }
-
-                this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * newKeys.length)];
+                this.kwargs[this.days[i1]] = '';
             }
         } while (++i1 < this.days.length);
     }
@@ -273,7 +251,13 @@ class EAT {
         var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
 
         for (var i0 = 0; i0 < this.days.length; i0++) {
-            out += '\n' + this.ddays[i0] + this.kwargs[days[i0]] + '(' + this.kwargs['GlobalMenu'][this.kwargs[days[i0]]] + ')';
+            if (this.kwargs[days[i0]] != '') {
+                out += '\n' + this.ddays[i0] + this.kwargs[days[i0]] + ' (' + this.kwargs['GlobalMenu'][this.kwargs[days[i0]]] + ')';
+            } else {
+                // Invetar plato con lo que falta
+                out += '\n' + this.ddays[i0] + '0' + ' (' + '0' + ')';
+            }
+            
         }
 
         out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';

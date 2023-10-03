@@ -34,11 +34,13 @@ function set(object) {
 }
 //
 function send() {
-    location.href = 'whatsapp://send?text=' + ((this.__eat.str).replaceAll(' ', '%20')).replaceAll('\n', '%0A');    
+    var out = this.__eat.str;
+    console.log(out);
+    
+    location.href = 'whatsapp://send?text=' + ((out).replaceAll(' ', '%20')).replaceAll('\n', '%0A');    
 }
 // Actualizar valores de la clase
 function update() {
     $('div[id=lack]').html((this.__eat.lack).replaceAll('\n', '<br />'));
 }
-
 
