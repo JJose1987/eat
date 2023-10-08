@@ -14,5 +14,5 @@ var GlobalMenu = {
   , 'Brócoli con pollo'              : 'brócoli, ajo, pollo'
   , 'Habichuelas' : 'habichuelas, pimiento rojo, zanahorias, chorizo, patata, cebolla, tomate'
   , 'Guisillo' : 'pimiento rojo, zanahoria, patata, cebolla, pollo, tomate'
-  , 'Paella' : 'tomate, pimiento, cebolla, arroz, gambas, calamar, costilla'
+  , 'Paella' : 'tomate, pimiento, cebolla, arroz, gambas, calamar, cerdo'
 };
