@@ -49,7 +49,7 @@ class EAT {
         this.CheckLack = {
               'arroces'         : [0,  5, ['arroz']]
             , 'pastas'          : [0,  3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
-            , 'legumbres'       : [0,  3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas']]
+            , 'legumbres'       : [0,  3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas', 'habichuelas']]
             , 'tubérculos'      : [0,  7, ['patata', 'batata']]
             , 'carnes blancas'  : [0,  3, ['pollo', 'pavo', 'gallina']]
             , 'carnes rojas'    : [0,  2, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
