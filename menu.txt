@@ -12,6 +12,9 @@ var GlobalMenu = {
   , 'Enfritada'                      : 'calabacín, pimiento rojo, zanahorias, ternera, cebolla, tomate triturado'
   , 'Brócoli con pollo'              : 'brócoli, ajo, pollo'
   , 'Habichuelas' : 'habichuelas, pimiento rojo, zanahorias, chorizo, patata, cebolla, tomate'
-  , 'Guisillo' : 'pimiento rojo, zanahoria, patata, cebolla, pollo, tomate'
+  , 'Guisillo' : 'pimiento rojo, zanahorias, patata, cebolla, pollo, tomate'
   , 'Paella' : 'tomate, pimiento, cebolla, arroz, gambas, calamar, cerdo'
+  , 'Hamburguesa/Bocadillo' : 'pan, cerdo'
+  , 'Macarrones nata bacon' : 'macarrones, cebolla, nata, cerdo'
+  , 'Macarrones nata pescados' : 'macarrones, cebolla, nata, gambas, salmón, merluza'
 };
