@@ -22,5 +22,5 @@ var GlobalMenu = {
   , 'Alcachofas con jamón' : 'alcachofas, ajo, cerdo'
   , 'Ensalada' : 'atún, pollo, queso fresco, pimiento, tomate, maíz'
   , 'Ensalada pasta' : 'atún, pollo, queso fresco, pimiento, tomate, maíz, macarrones'
-  , 'Ensalada garbanzos' : 'atún, pollo, queso fresco, pimiento, tomate, maíz, garbanzos:
+  , 'Ensalada garbanzos' : 'atún, pollo, queso fresco, pimiento, tomate, maíz, garbanzos'
 };
