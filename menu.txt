@@ -18,4 +18,5 @@ var GlobalMenu = {
   , 'Macarrones carne' : 'macarrones, cebolla, nata, tomate, cerdo, ternera'
   , 'Macarrones pescados' : 'macarrones, cebolla, nata, tomate, atún, gambas, salmón, merluza'
   , 'Fideos' : 'tomate, pimiento, cebolla, fideos, gambas, calamar, cerdo'
+  , 'Tortilla francesa' : 'huevo'
 };
