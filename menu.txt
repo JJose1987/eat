@@ -15,6 +15,6 @@ var GlobalMenu = {
   , 'Guisillo' : 'pimiento rojo, zanahorias, patata, cebolla, pollo, tomate'
   , 'Paella' : 'tomate, pimiento, cebolla, arroz, gambas, calamar, cerdo'
   , 'Hamburguesa/Bocadillo' : 'pan, cerdo'
-  , 'Macarrones nata bacon' : 'macarrones, cebolla, nata, cerdo'
-  , 'Macarrones nata pescados' : 'macarrones, cebolla, nata, gambas, salmón, merluza'
+  , 'Macarrones carne' : 'macarrones, cebolla, nata, tomate, cerdo, ternera'
+  , 'Macarrones pescados' : 'macarrones, cebolla, nata, tomate, atún, gambas, salmón, merluza'
 };
