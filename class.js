@@ -5,7 +5,7 @@ class EAT {
     constructor(kwargs) {
         //*********************************************************************************
         // Variables por defecto
-        this.person = 3;
+        this.person = 1;
 
         this.ration = {
         };
