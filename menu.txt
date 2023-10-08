@@ -12,4 +12,5 @@ var GlobalMenu = {
   , 'Fajitas de merluza'             : 'calabacín, pimiento rojo, zanahorias, merluza, gambas, cebolla, tomate triturado, tortas de maíz'
   , 'Enfritada'                      : 'calabacín, pimiento rojo, zanahorias, ternera, cebolla, tomate triturado'
   , 'Brócoli con pollo'              : 'brócoli, ajo, pollo'
+  , 'Habichuelas' : 'Habichuelas, pimiento rojo, zanahorias, chorizo, patata'
 };
