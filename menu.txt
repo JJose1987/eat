@@ -1,5 +1,5 @@
 var GlobalMenu = {
-    'Arroz con caballa'              : 'arroz, caballa, ajo, pimiento rojo, zanahorias'
+    'Arroz con caballa'              : 'arroz, caballa, ajo, pimiento, zanahorias'
   , 'Arroz con pollo'                : 'arroz, pollo, ajo, pimiento rojo, zanahorias'
   , 'Garbanzos'                      : 'garbanzos, hueso de canilla, calabaza, patata, zanahorias, judías verdes'
   , 'Espaguettis de calabacín'       : 'calabacín, tomate triturado, espaguettis'
@@ -19,4 +19,6 @@ var GlobalMenu = {
   , 'Macarrones pescados' : 'macarrones, cebolla, nata, tomate, atún, gambas, salmón, merluza'
   , 'Fideos' : 'tomate, pimiento, cebolla, fideos, gambas, calamar, cerdo'
   , 'Tortilla francesa' : 'huevo'
+  , 'Alcachofas con jamón' : 'alcachofas, ajo, cerdo'
+  , 'Ensalada' : 'atún, pollo, queso fresco, pimiento, tomate, maíz'
 };
