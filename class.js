@@ -7,7 +7,7 @@ class EAT {
         // Variables por defecto
         this.person = 1;
 
-        this.ration = {
+        this.ration = {'': ''
         };
 
         this.CheckLack = {
