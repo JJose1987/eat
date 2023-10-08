@@ -8,42 +8,6 @@ class EAT {
         this.person = 3;
 
         this.ration = {
-              'arroz'         : 0.100
-            , 'macarrones'    : 0.100
-            , 'espaguettis'   : 0.100
-            , 'fideos'        : 0.100
-            , 'garbanzos'     : 0.090
-            , 'guisantes'     : 0.200
-            , 'judías verdes' : 0.175
-            , 'lentejas'      : 0.090
-            , 'patata'        : 0.200
-            , 'batata'        : 0.200
-            , 'pollo'         : 0.225
-            , 'gallina'       : 0.225
-            , 'pavo'          : 0.150
-            , 'ternera'       : 0.300
-            , 'cerdo'         : 0.200
-            , 'bacon'         : 0.100
-            , 'jamon'         : 0.100
-            , 'cordero'       : 0.200
-            , 'merluza'       : 0.300
-            , 'bacalao'       : 0.200
-            , 'atún'          : 0.170
-            , 'salmón'        : 0.150
-            , 'caballa'       : 0.100
-            , 'trucha'        : 0.150
-            , 'dorada'        : 0.300
-            , 'huevo'         : 2
-            , 'alcachofas'    : 0.200
-            , 'brócoli'       : 0.200
-            , 'calabacín'     : 0.200
-            , 'calabaza'      : 0.140
-            , 'espinacas'     : 0.300
-            , 'pimiento rojo' : 0.500
-            , 'pimiento verde': 0.500
-            , 'tomates'       : 0.200
-            , 'zanahoria'     : 3
-            , 'tortas de maíz': 2
         };
 
         this.CheckLack = {
@@ -51,8 +15,8 @@ class EAT {
             , 'pastas'          : [0,  3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
             , 'legumbres'       : [0,  3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas', 'habichuelas']]
             , 'tubérculos'      : [0,  7, ['patata', 'batata']]
-            , 'carnes blancas'  : [0,  3, ['pollo', 'pavo', 'gallina']]
-            , 'carnes rojas'    : [0,  2, ['ternera', 'cerdo', 'bacon', 'jamon', 'cordero', 'solomillo', 'lomo', 'pato']]
+            , 'carnes blancas'  : [0,  3, ['pollo', 'pavo', 'gallina', 'cerdo']]
+            , 'carnes rojas'    : [0,  2, ['ternera', 'cordero', 'pato']]
             , 'pescados blancos': [0,  4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
             , 'pescados azules' : [0,  4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
             , 'huevos'          : [0,  7, ['huevo']]
