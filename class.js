@@ -11,14 +11,14 @@ class EAT {
         };
 
         this.CheckLack = {
-              'arroces'         : [0,  5, ['arroz']]
-            , 'pastas'          : [0,  3, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
-            , 'legumbres'       : [0,  3, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas', 'habichuelas']]
+              'arroces'         : [0,  2, ['arroz']]
+            , 'pastas'          : [0,  2, ['espirales', 'lazos', 'macarrones', 'rigatoni', 'caracolas', 'nidos', 'spaghetti', 'tagliatelle', 'fettuccine', 'fideos', 'estrellas', 'sopa de letras', 'pasta de colores', 'fideos de arroz', 'pasta al huevo', 'lasagna', 'raviolis', 'tortellini']]
+            , 'legumbres'       : [0,  2, ['garbanzos', 'guisantes', 'judías verdes', 'lentejas', 'habichuelas']]
             , 'tubérculos'      : [0,  7, ['patata', 'batata']]
-            , 'carnes blancas'  : [0,  3, ['pollo', 'pavo', 'gallina', 'cerdo']]
+            , 'carnes blancas'  : [0,  5, ['pollo', 'pavo', 'gallina', 'cerdo']]
             , 'carnes rojas'    : [0,  2, ['ternera', 'cordero', 'pato']]
-            , 'pescados blancos': [0,  4, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
-            , 'pescados azules' : [0,  4, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
+            , 'pescados blancos': [0,  5, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
+            , 'pescados azules' : [0,  5, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
             , 'huevos'          : [0,  7, ['huevo']]
             , 'verduras'        : [0, 99, ['aguacate', 'ajo', 'alcachofa', 'berenjena', 'brócoli', 'calabaza', 'calabacín', 'cebolla', 'coliflor', 'espinaca', 'pimiento', 'tomate', 'zanahoria', 'champiñon']]
         };
