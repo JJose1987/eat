@@ -7,7 +7,75 @@ class EAT {
         // Variables por defecto
         this.person = 1;
 
-        this.ration = {'': 0
+        this.ration = {'arroz'           : 1.0
+            , 'espirales'       : 1.0
+            , 'lazos'           : 1.0
+            , 'macarrones'      : 1.0
+            , 'rigatoni'        : 1.0
+            , 'caracolas'       : 1.0
+            , 'nidos'           : 1.0
+            , 'spaghetti'       : 1.0
+            , 'tagliatelle'     : 1.0
+            , 'fettuccine'      : 1.0
+            , 'fideos'          : 1.0
+            , 'estrellas'       : 1.0
+            , 'sopa de letras'  : 1.0
+            , 'pasta de colores': 1.0
+            , 'fideos de arroz' : 1.0
+            , 'pasta al huevo'  : 1.0
+            , 'lasagna'         : 1.0
+            , 'raviolis'        : 1.0
+            , 'tortellini'      : 1.0
+            , 'garbanzos'       : 1.0
+            , 'guisantes'       : 1.0
+            , 'judías verdes'   : 1.0
+            , 'lentejas'        : 1.0
+            , 'habichuelas'     : 1.0
+            , 'patata'          : 1.0
+            , 'batata'          : 1.0
+            , 'pollo'           : 1.0
+            , 'pavo'            : 1.0
+            , 'gallina'         : 1.0
+            , 'cerdo'           : 1.0
+            , 'ternera'         : 1.0
+            , 'cordero'         : 1.0
+            , 'pato'            : 1.0
+            , 'lenguado'        : 1.0
+            , 'merluza'         : 1.0
+            , 'pescadilla'      : 1.0
+            , 'rape'            : 1.0
+            , 'bacalao'         : 1.0
+            , 'gallo'           : 1.0
+            , 'rodaballo'       : 1.0
+            , 'lubina'          : 1.0
+            , 'atún'            : 1.0
+            , 'pez espada'      : 1.0
+            , 'salmón'          : 1.0
+            , 'boquerón'        : 1.0
+            , 'besugo'          : 1.0
+            , 'salmonete'       : 1.0
+            , 'caballa'         : 1.0
+            , 'trucha'          : 1.0
+            , 'cazón'           : 1.0
+            , 'sardina'         : 1.0
+            , 'gallineta'       : 1.0
+            , 'mero'            : 1.0
+            , 'dorada'          : 1.0
+            , 'huevo'           : 1.0
+            , 'aguacate'        : 1.0
+            , 'ajo'             : 1.0
+            , 'alcachofa'       : 1.0
+            , 'berenjena'       : 1.0
+            , 'brócoli'         : 1.0
+            , 'calabaza'        : 1.0
+            , 'calabacín'       : 1.0
+            , 'cebolla'         : 1.0
+            , 'coliflor'        : 1.0
+            , 'espinaca'        : 1.0
+            , 'pimiento'        : 1.0
+            , 'tomate'          : 1.0
+            , 'zanahoria'       : 1.0
+            , 'champiñon'       : 1.0
         };
 
         this.CheckLack = {
@@ -18,7 +86,7 @@ class EAT {
             , 'carnes blancas'  : [0,  5, ['pollo', 'pavo', 'gallina', 'cerdo']]
             , 'carnes rojas'    : [0,  2, ['ternera', 'cordero', 'pato']]
             , 'pescados blancos': [0,  5, ['lenguado', 'merluza', 'pescadilla', 'rape', 'bacalao', 'gallo', 'rodaballo', 'lubina']]
-            , 'pescados azules' : [0,  5, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada']]
+            , 'pescados azules' : [0,  5, ['atún', 'pez espada', 'salmón', 'boquerón', 'besugo', 'salmonete', 'caballa', 'trucha', 'cazón', 'sardina', 'gallineta', 'mero', 'dorada', 'gambas', 'calamar']]
             , 'huevos'          : [0,  7, ['huevo']]
             , 'verduras'        : [0, 99, ['aguacate', 'ajo', 'alcachofa', 'berenjena', 'brócoli', 'calabaza', 'calabacín', 'cebolla', 'coliflor', 'espinaca', 'pimiento', 'tomate', 'zanahoria', 'champiñon']]
         };
