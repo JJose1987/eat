@@ -14,7 +14,7 @@ var GlobalMenu = {
   , 'Habichuelas'                   : 'habichuelas, pimiento, zanahoria, chorizo, patata, cebolla, tomate, cerdo'
   , 'Guisillo'                      : 'pimiento, zanahoria, patata, cebolla, pollo, tomate'
   , 'Paella'                        : 'tomate, pimiento, cebolla, arroz, gambas, calamar, cerdo'
-  , 'Hamburguesa/Bocadillo'         : 'pan, cerdo'
+  , 'Hamburguesa o Bocadillo'       : 'pan, cerdo'
   , 'Macarrones carne'              : 'macarrones, cebolla, nata, tomate, cerdo, ternera'
   , 'Macarrones pescados'           : 'macarrones, cebolla, nata, tomate, atún, gambas, salmón, merluza'
   , 'Fideos'                        : 'tomate, pimiento, cebolla, fideos, gambas, calamar, cerdo'
