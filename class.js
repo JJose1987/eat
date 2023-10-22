@@ -92,13 +92,13 @@ class EAT {
         };
 
         this.days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
-        this.ddays = ['Lunes;Comer;' , 'Lunes;Cenar;'
-                    , 'Marte;Comer;' , 'Marte;Cenar;'
-                    , 'Mierc;Comer;' , 'Mierc;Cenar;'
-                    , 'Jueve;Comer;' , 'Jueve;Cenar;'
-                    , 'Viern;Comer;' , 'Viern;Cenar;'
-                    , 'Sabad;Comer;' , 'Sabad;Cenar;'
-                    , 'Domin;Comer;' , 'Domin;Cenar;'];
+        this.ddays = ['Lunes    ;Comer;' , 'Lunes    ;Cenar;'
+                    , 'Martes   ;Comer;' , 'Martes   ;Cenar;'
+                    , 'Miércoles;Comer;' , 'Miércoles;Cenar;'
+                    , 'Jueves   ;Comer;' , 'Jueves   ;Cenar;'
+                    , 'Viernes  ;Comer;' , 'Viernes  ;Cenar;'
+                    , 'Sábado   ;Comer;' , 'Sábado   ;Cenar;'
+                    , 'Domingo  ;Comer;' , 'Domingo  ;Cenar;'];
 
         this.kwargs = {};
         this.kwargs['GlobalMenu'] = {'': ''};
@@ -166,7 +166,7 @@ class EAT {
             }
 
             if (err) {
-                this.kwargs[this.days[i1]] = '';
+                this.kwargs[this.days[i1]] = 'Comodín';
             }
         } while (++i1 < this.days.length);
     }
@@ -286,8 +286,7 @@ class EAT {
             if (this.kwargs[days[i0]] != '') {
                 out += '\n' + this.ddays[i0] + this.kwargs[days[i0]] + ' (' + this.kwargs['GlobalMenu'][this.kwargs[days[i0]]] + ')';
             } else {
-                // Invetar plato con lo que falta
-                out += '\n' + this.ddays[i0] + '0' + ' (' + '0' + ')';
+                out += '\n' + this.ddays[i0] + this.kwargs[days[i0]] + ' (' + '' + ')';
             }
             
         }
