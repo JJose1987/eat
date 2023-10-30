@@ -101,18 +101,16 @@ class EAT {
                     , 'Domingo  ;Comer;' , 'Domingo  ;Cenar;'];
 
         this.kwargs = {};
-        this.kwargs['GlobalMenu'] = {'': ''};
+        this.kwargs['GlobalMenu'] = {'Comodín': 'Comodín'};
 
         // Informar valores
         if (typeof GlobalMenu != 'undefined') {
             try {
                 this.kwargs['GlobalMenu'] = GlobalMenu;
-                
-                var auxKeys = Object.keys(this.kwargs['GlobalMenu']);
-                
+                this.kwargs['GlobalMenu']['Comodín'] = 'Comodín';
             } catch (e) {
                 if (e instanceof TypeError) {
-                    this.kwargs['GlobalMenu'] = {'': ''};
+                    this.kwargs['GlobalMenu'] = {'Comodín': 'Comodín'};
                 }
             }
         }

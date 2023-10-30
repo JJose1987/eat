@@ -13,8 +13,7 @@ function main() {
     
     for (var i0 = 0; i0 < days.length; i0++) {
         $.each(this.__eat.get('GlobalMenu'), function(key, val) {$('[name=' + days[i0] + ']').append(new Option(key, key.replaceAll(' ', '_')));});
-        $('[name=' + days[i0] + ']').append(new Option('Comodín', 'Comodín'));
-        
+
         if (this.__eat.get(days[i0]) != '') {
             $('[name=' + days[i0] + '] option[value=' + this.__eat.get(days[i0]).replaceAll(' ', '_') + ']').attr('selected','selected');
         }
