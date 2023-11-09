@@ -3,7 +3,6 @@ var GlobalMenu = {
   , 'Alcachofas con jamón'          : 'alcachofas, ajo, cerdo'
   , 'Arroz con pollo'               : 'arroz, pollo, ajo, pimiento, zanahoria'
   , 'Brócoli con pollo'             : 'brócoli, ajo, pollo, pimiento, cebolla'
-  , 'Comodín'                       : ''
   , 'Enfritada'                     : 'calabacín, pimiento, zanahoria, ternera, cebolla, tomate'
   , 'Ensalada garbanzos'            : 'atún, pollo, queso fresco, pimiento, tomate, maíz, garbanzos'
   , 'Ensalada pasta'                : 'atún, pollo, queso fresco, pimiento, tomate, maíz, macarrones'

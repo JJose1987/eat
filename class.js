@@ -7,61 +7,61 @@ class EAT {
         // Variables por defecto
         this.person = 1;
 
-        this.ration = {'arroz'  : 1
-            , 'espirales'       : 1
-            , 'lazos'           : 1
-            , 'macarrones'      : 1
-            , 'rigatoni'        : 1
-            , 'caracolas'       : 1
-            , 'nidos'           : 1
-            , 'spaghetti'       : 1
-            , 'tagliatelle'     : 1
-            , 'fettuccine'      : 1
-            , 'fideos'          : 1
-            , 'estrellas'       : 1
-            , 'sopa de letras'  : 1
-            , 'pasta de colores': 1
-            , 'fideos de arroz' : 1
-            , 'pasta al huevo'  : 1
-            , 'lasagna'         : 1
-            , 'raviolis'        : 1
-            , 'tortellini'      : 1
-            , 'garbanzos'       : 1
-            , 'guisantes'       : 1
-            , 'judías verdes'   : 1
-            , 'lentejas'        : 1
-            , 'habichuelas'     : 1
-            , 'patata'          : 1
-            , 'batata'          : 1
-            , 'pollo'           : 1
-            , 'pavo'            : 1
-            , 'gallina'         : 1
-            , 'cerdo'           : 1
-            , 'ternera'         : 1
-            , 'cordero'         : 1
-            , 'pato'            : 1
-            , 'lenguado'        : 1
-            , 'merluza'         : 1
-            , 'pescadilla'      : 1
-            , 'rape'            : 1
-            , 'bacalao'         : 1
-            , 'gallo'           : 1
-            , 'rodaballo'       : 1
-            , 'lubina'          : 1
-            , 'atún'            : 1
-            , 'pez espada'      : 1
-            , 'salmón'          : 1
-            , 'boquerón'        : 1
-            , 'besugo'          : 1
-            , 'salmonete'       : 1
-            , 'caballa'         : 1
-            , 'trucha'          : 1
-            , 'cazón'           : 1
-            , 'sardina'         : 1
-            , 'gallineta'       : 1
-            , 'mero'            : 1
-            , 'dorada'          : 1
-            , 'huevo'           : 1
+        this.ration = {'arroz'  : 0.150
+            , 'espirales'       : 0.150
+            , 'lazos'           : 0.150
+            , 'macarrones'      : 0.150
+            , 'rigatoni'        : 0.150
+            , 'caracolas'       : 0.150
+            , 'nidos'           : 0.150
+            , 'spaghetti'       : 0.150
+            , 'tagliatelle'     : 0.150
+            , 'fettuccine'      : 0.150
+            , 'fideos'          : 0.150
+            , 'estrellas'       : 0.150
+            , 'sopa de letras'  : 0.150
+            , 'pasta de colores': 0.150
+            , 'fideos de arroz' : 0.150
+            , 'pasta al huevo'  : 0.150
+            , 'lasagna'         : 0.150
+            , 'raviolis'        : 0.150
+            , 'tortellini'      : 0.150
+            , 'garbanzos'       : 0.250
+            , 'guisantes'       : 0.250
+            , 'judías verdes'   : 0.250
+            , 'lentejas'        : 0.250
+            , 'habichuelas'     : 0.250
+            , 'patata'          : 0.250
+            , 'batata'          : 0.250
+            , 'pollo'           : 0.200
+            , 'pavo'            : 0.200
+            , 'gallina'         : 0.200
+            , 'cerdo'           : 0.200
+            , 'ternera'         : 0.200
+            , 'cordero'         : 0.200
+            , 'pato'            : 0.200
+            , 'lenguado'        : 0.350
+            , 'merluza'         : 0.350
+            , 'pescadilla'      : 0.350
+            , 'rape'            : 0.350
+            , 'bacalao'         : 0.350
+            , 'gallo'           : 0.350
+            , 'rodaballo'       : 0.350
+            , 'lubina'          : 0.350
+            , 'atún'            : 0.350
+            , 'pez espada'      : 0.350
+            , 'salmón'          : 0.350
+            , 'boquerón'        : 0.350
+            , 'besugo'          : 0.350
+            , 'salmonete'       : 0.350
+            , 'caballa'         : 0.350
+            , 'trucha'          : 0.350
+            , 'cazón'           : 0.350
+            , 'sardina'         : 0.350
+            , 'gallineta'       : 0.350
+            , 'mero'            : 0.350
+            , 'dorada'          : 0.350
+            , 'huevo'           : 2
             , 'aguacate'        : 1
             , 'ajo'             : 1
             , 'alcachofa'       : 1
@@ -101,15 +101,16 @@ class EAT {
                     , '*Domingo  *\n*Comer*\n' , '*Domingo  *\n*Cenar*\n'];
 
         this.kwargs = {};
-        this.kwargs['GlobalMenu'] = {'': ''};
+        this.kwargs['GlobalMenu'] = {'Comodín': 'Comodín'};
 
         // Informar valores
         if (typeof GlobalMenu != 'undefined') {
             try {
                 this.kwargs['GlobalMenu'] = GlobalMenu;
+                this.kwargs['GlobalMenu']['Comodín'] = 'Comodín';
             } catch (e) {
                 if (e instanceof TypeError) {
-                    this.kwargs['GlobalMenu'] = {'': ''};
+                    this.kwargs['GlobalMenu'] = {'Comodín': 'Comodín'};
                 }
             }
         }
@@ -123,7 +124,6 @@ class EAT {
         var newKeys = [];
         var auxKeys = Object.keys(this.kwargs['GlobalMenu']);
         var insert  = true;
-        var err     = false;
 
         do {
             if (i1 > 0) {
@@ -131,9 +131,9 @@ class EAT {
             }
 
             var i0   = auxKeys.length;
-            this.kwargs[this.days[i1]] = '';
+            this.kwargs[this.days[i1]] = 'Comodín';
 
-            if ((i0 > 0) && !err) {
+            if (i0 > 0) {
                 this.kwargs[this.days[i1]] = auxKeys[Math.floor(Math.random() * i0)];
 
                 var aux0 = this.list();
@@ -159,14 +159,6 @@ class EAT {
                         }
                     }
                 }
-            }
-
-            if (i0 <= 0) {
-                err = true;
-            }
-
-            if (err) {
-                this.kwargs[this.days[i1]] = 'Comodín';
             }
         } while (++i1 < this.days.length);
     }
@@ -296,12 +288,14 @@ class EAT {
         var auxKeys = Object.keys(aux0);
 
         for (var i0 = 0; i0 < auxKeys.length; i0++) {
-            var aux1 = aux0[auxKeys[i0]] * this.person
-            if (typeof this.ration[auxKeys[i0]] != 'undefined') {
-                aux1 *= this.ration[auxKeys[i0]];
-            }
+			if (auxKeys[i0] != '') {
+				var aux1 = aux0[auxKeys[i0]] * this.person
+				if (typeof this.ration[auxKeys[i0]] != 'undefined') {
+					aux1 *= this.ration[auxKeys[i0]];
+				}
 
-            out += '\n: -> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
+				out += '\n: -> ' +  ('      ' + aux1.toFixed(3)).slice(-7) + ' ud. de ' + auxKeys[i0];
+			}
         }
 
         out += '\n' + this.lack;
