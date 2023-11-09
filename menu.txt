@@ -2,6 +2,7 @@ var GlobalMenu = {
     'Arroz con caballa'             : 'arroz, caballa, ajo, pimiento, zanahoria'
   , 'Alcachofas con jamón'          : 'alcachofas, ajo, cerdo'
   , 'Arroz con pollo'               : 'arroz, pollo, ajo, pimiento, zanahoria'
+  , 'Arroz a cubana'                : 'arroz, cerdo, huevo, tomate'
   , 'Brócoli con pollo'             : 'brócoli, ajo, pollo, pimiento, cebolla'
   , 'Enfritada'                     : 'calabacín, pimiento, zanahoria, ternera, cebolla, tomate'
   , 'Ensalada garbanzos'            : 'atún, pollo, queso fresco, pimiento, tomate, maíz, garbanzos'
