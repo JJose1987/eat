@@ -92,13 +92,13 @@ class EAT {
         };
 
         this.days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
-        this.ddays = ['Lunes    ;Comer;' , 'Lunes    ;Cenar;'
-                    , 'Martes   ;Comer;' , 'Martes   ;Cenar;'
-                    , 'Miércoles;Comer;' , 'Miércoles;Cenar;'
-                    , 'Jueves   ;Comer;' , 'Jueves   ;Cenar;'
-                    , 'Viernes  ;Comer;' , 'Viernes  ;Cenar;'
-                    , 'Sábado   ;Comer;' , 'Sábado   ;Cenar;'
-                    , 'Domingo  ;Comer;' , 'Domingo  ;Cenar;'];
+        this.ddays = ['*Lunes    *\n*Comer*\n' , '*Lunes    *\n*Cenar*\n'
+                    , '*Martes   *\n*Comer*\n' , '*Martes   *\n*Cenar*\n'
+                    , '*Miércoles*\n*Comer*\n' , '*Miércoles*\n*Cenar*\n'
+                    , '*Jueves   *\n*Comer*\n' , '*Jueves   *\n*Cenar*\n'
+                    , '*Viernes  *\n*Comer*\n' , '*Viernes  *\n*Cenar*\n'
+                    , '*Sábado   *\n*Comer*\n' , '*Sábado   *\n*Cenar*\n'
+                    , '*Domingo  *\n*Comer*\n' , '*Domingo  *\n*Cenar*\n'];
 
         this.kwargs = {};
         this.kwargs['GlobalMenu'] = {'': ''};
