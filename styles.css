@@ -3,6 +3,7 @@ body {
    font-family: monospace;
    font-size: 1vmax;
    margin: 0.1%;
+   transformX: rotate(90deg);
 }
 /* Table */
 .table {

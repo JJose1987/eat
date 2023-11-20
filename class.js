@@ -92,13 +92,13 @@ class EAT {
         };
 
         this.days = ['mon_l' , 'mon_d' , 'tue_l' , 'tue_d' , 'wed_l' , 'wed_d' , 'thu_l' , 'thu_d' , 'fri_l' , 'fri_d' , 'sat_l' , 'sat_d' , 'sun_l' , 'sun_d'];
-        this.ddays = ['*Lunes*    \n*Comer*\n' , '*Lunes*    \n*Cenar*\n'
-                    , '*Martes*   \n*Comer*\n' , '*Martes*   \n*Cenar*\n'
-                    , '*Miércoles*\n*Comer*\n' , '*Miércoles*\n*Cenar*\n'
-                    , '*Jueves*   \n*Comer*\n' , '*Jueves*   \n*Cenar*\n'
-                    , '*Viernes*  \n*Comer*\n' , '*Viernes*  \n*Cenar*\n'
-                    , '*Sábado*   \n*Comer*\n' , '*Sábado*   \n*Cenar*\n'
-                    , '*Domingo*  \n*Comer*\n' , '*Domingo*  \n*Cenar*\n'];
+        this.ddays = ['Lunes    ;Comer;' , 'Lunes    ;Cenar;'
+                    , 'Martes   ;Comer;' , 'Martes   ;Cenar;'
+                    , 'Miércoles;Comer;' , 'Miércoles;Cenar;'
+                    , 'Jueves   ;Comer;' , 'Jueves   ;Cenar;'
+                    , 'Viernes  ;Comer;' , 'Viernes  ;Cenar;'
+                    , 'Sábado   ;Comer;' , 'Sábado   ;Cenar;'
+                    , 'Domingo  ;Comer;' , 'Domingo  ;Cenar;'];
 
         this.kwargs = {};
         this.kwargs['GlobalMenu'] = {'Comodín': 'Comodín'};
@@ -240,29 +240,13 @@ class EAT {
     /* Metodo para devolver los excesos  o carencias */
     get lack() {
         var out = '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';
-
-        var little = '';
-        var lotof  = '';
-
         var aux0 = this.list();
         var auxKeys = Object.keys(this.CheckLack);
 
-        for (var i0 = 0; i0 < auxKeys.length; i0++) {
+        for (var i0 = 0; i0 < auxKeys.length - 1; i0++) {
             var aux1 = this.CheckLack[auxKeys[i0]][2];
-
-            if (this.CheckLack[auxKeys[i0]][0] > this.CheckLack[auxKeys[i0]][1]) {
-                lotof  += auxKeys[i0] + ', ';
-            } else if (this.CheckLack[auxKeys[i0]][0] < this.CheckLack[auxKeys[i0]][1]) {
-                little += auxKeys[i0] + ', ';
-            }
-        }
-
-        if (lotof != '') {
-            out += '\n: -> Much@s ' + lotof.substr(0, lotof.length - 2) + '.';
-        }
-
-        if (little != '') {
-            out += '\n: -> Poc@s  ' + little.substr(0, little.length - 2) + '.';
+            
+            out += '\n ' + this.CheckLack[auxKeys[i0]][0] + '/' + this.CheckLack[auxKeys[i0]][1] + ' de ' + auxKeys[i0].capitalize() + '.';
         }
 
         out += '\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::';

@@ -48,7 +48,11 @@
                 return 100 - ((distance[this.length][compared.length] * this.length) / 100);
                 
             }
-            
+            // Primera letra en mayúscula
+            String.prototype.capitalize = function() {
+                return this.substr(0, 1).toUpperCase() + this.substr(1).toLowerCase();
+            }
+
             // Convierte el color de rgb a hexagesimal
             function rgb2hex(rgb) {
                 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);

@@ -7,7 +7,6 @@ const __eat = new EAT();
 
 // Funciones
 function main() {
-    $('div[class=table] div').height(height * 0.967);
     this.__eat = new EAT();
     this.__eat.sets();
     
