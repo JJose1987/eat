@@ -2,14 +2,16 @@
 body {
    font-family: monospace;
    font-size: 1vmax;
+   line-height: 1.5vmax;
    margin: 0.1%;
-   transformX: rotate(90deg);
+   text-align: left;
+   vertical-align: top;
 }
 /* Table */
 .table {
     display: table;
     border-collapse: collapse;
-    width: 100%;
+    width: 85%;
 }
 /* Row */
 .table div {
@@ -19,20 +21,8 @@ body {
 .table div div {
     display: table-cell;
     border:solid #000000 0.1vmax;
-    text-align: center;
     vertical-align: middle;
     padding: 0.5%;
-    background: #F4F4F4;
-}
-/* Body */
-.body div {
-    width: 50% !important;
-    vertical-align: top !important;
-    text-align: left !important;
-}
-/* */
-div {
-    margin: 1%;
 }
 /* */
 div[id=lack] {
@@ -41,11 +31,10 @@ div[id=lack] {
 }
 /* Formulario */
 select {
-    margin-left: 5%;
-    margin-bottom: 0.5vmax;
+    width: 100%;
 }
 /* Boton de compartir */
-svg {
+svg[id=whatsapp] {
     cursor: pointer;
     position: fixed;
     bottom: 3vmax;
